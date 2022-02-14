@@ -1,10 +1,10 @@
 /** @format */
 "use strict;";
 const simpleName = "Malte Skjoldager";
-const fullName = "Malte Tambo Skjoldager";
+const fullNamePt1 = "Malte Tambo Skjoldager";
 const headmaster = "Albus Percival Wulfric Brian Dumbledore";
 
-printName(simpleName);
+printName(headmaster);
 
 function printName(name) {
 	let firstName, middleName, lastName;
@@ -17,4 +17,16 @@ function printName(name) {
 
 	lastName = name.substring(name.lastIndexOf(" "), name.length).trim();
 	console.table({ firstName, middleName, lastName });
+
+	fullName(lastName, firstName, middleName);
+}
+
+// Nameparts Pt.2
+fullName("Potter", "Harry", "James");
+fullName("Potter", "Harry");
+fullName("Harry", "Potter");
+fullName("Potter", "Harry", "James", "Pottypotpot");
+
+function fullName(lastName, firstName, middleName) {
+	console.log(`${firstName.trim()} ${middleName ? middleName + " " : (middleName = "")}${lastName.trim()}`);
 }
