@@ -1,17 +1,20 @@
 /** @format */
 "use strict;";
+const simpleName = "Malte Skjoldager";
 const fullName = "Malte Tambo Skjoldager";
 const headmaster = "Albus Percival Wulfric Brian Dumbledore";
 
-printName(headmaster);
+printName(simpleName);
 
 function printName(name) {
-	let firstName = name.substring(0, name.indexOf(" ")).trim();
-	console.log(firstName);
-	let middleName = name
-		.substring(name.indexOf(" "), name.lastIndexOf(" "))
-		.trim();
-	console.log(middleName);
-	let lastName = name.substring(name.lastIndexOf(" "), name.length).trim();
-	console.log(lastName);
+	let firstName, middleName, lastName;
+	firstName = name.substring(0, name.indexOf(" ")).trim();
+	if (name.trim().substring(name.indexOf(" ") + 1, name.lastIndexOf(" ")) !== " ") {
+		middleName = name.trim().substring(name.indexOf(" ") + 1, name.lastIndexOf(" "));
+	} else {
+		middleName = null;
+	}
+
+	lastName = name.substring(name.lastIndexOf(" "), name.length).trim();
+	console.table({ firstName, middleName, lastName });
 }

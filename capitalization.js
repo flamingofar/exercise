@@ -3,6 +3,9 @@
 
 console.log("Capitalization");
 
+/*
+ * Old Exercise
+ */
 let name = "malte";
 capitalization(name);
 
