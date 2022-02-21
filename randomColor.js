@@ -13,10 +13,14 @@ function randomBackground() {
 
 function randomColor() {
 	let r, g, b;
-	r = Math.floor(Math.random() * 255);
-	g = Math.floor(Math.random() * 255);
-	b = Math.floor(Math.random() * 255);
+	r = generateRandomColor();
+	g = generateRandomColor();
+	b = generateRandomColor();
 	return { r, g, b };
+}
+
+function generateRandomColor() {
+	return Math.floor(Math.random() * 256);
 }
 
 function rgbToCSS(rgbObj) {
