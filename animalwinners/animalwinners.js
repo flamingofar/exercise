@@ -56,7 +56,8 @@ function preapareObject(jsonObject) {
 }
 
 function buildList() {
-	const currentList = allAnimals; // TODO: Add filter and sort on this list, before displaying
+	const currentList = allAnimals;
+	// TODO: Add filter and sort on this list, before displaying
 	displayList(currentList);
 }
 
@@ -85,7 +86,7 @@ function displayAnimal(animal) {
 	// Star
 	animal.star ? (clone.querySelector("[data-field=star]").textContent = "⭐") : (clone.querySelector("[data-field=star]").textContent = "☆");
 	//Winner
-	animal.winner ? (clone.querySelector("[data-field=winner]").textContent = "🏆") : (clone.querySelector("[data-field=winner]").textContent = " ⚫️ ");
+	animal.winner ? (clone.querySelector("[data-field=winner]").textContent = "🏆") : clone.querySelector("[data-field=winner]").setAttribute("data-winner", "false");
 
 	// TODO: Add event listeners for star and winner
 	clone.querySelector("[data-field=star]").addEventListener("click", () => {
